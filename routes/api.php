@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\VideoController;
+use App\Http\Controllers\RecordingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +15,6 @@ use App\Http\Controllers\VideoController;
 |
 */
 
-Route::post('/upload', [VideoController::class, 'store']);
+Route::post('/upload', [RecordingController::class, 'uploadChunk']);
+Route::get('/start', [RecordingController::class, 'startStream']);
+Route::get('/recordings', [RecordingController::class, 'startStream']);
